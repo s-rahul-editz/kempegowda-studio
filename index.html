@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kempegowda Studio | Udyamada Maatu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Noto+Serif+Kannada:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       KEMPEGOWDA JAYANTI TAKEOVER MODAL
+  ════════════════════════════════════ -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Kempegowda Jayanti Tribute">
+    <div class="modal-content">
+
+      <!-- Portrait Frame: 280×380, auto-crop via object-fit -->
+      <div class="portrait-frame">
+        <img src="images/kempegowda.jpg" alt="Nadaprabhu Kempegowda — Portrait" />
+      </div>
+
+      <!-- Tribut Typography -->
+      <div class="modal-text">
+        <p class="modal-kannada">ನಾಡಪ್ರಭು ಕೆಂಪೇಗೌಡ ಜಯಂತಿಯ ಶುಭಾಶಯಗಳು</p>
+        <p class="modal-english">Happy Kempegowda Jayanti</p>
+      </div>
+
+      <button id="enter-btn" class="enter-btn" aria-label="Enter Kempegowda Studio">
+        Enter Studio
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       MAIN PAGE — revealed after modal
+  ════════════════════════════════════ -->
+  <div id="main-page" class="main-page" aria-hidden="true">
+
+    <!-- Header -->
+    <header class="site-header">
+      <img src="images/wordmark.png" alt="Kempegowda Studio" class="wordmark" />
+      <div class="header-rule"></div>
+    </header>
+
+    <!-- Hero: 70vh, dual-language masthead -->
+    <main class="hero-section">
+      <div class="hero-content">
+        <h1 class="masthead-kannada">ಉದ್ಯಮದ ಮಾತು</h1>
+        <h2 class="masthead-english">Udyamada Maatu</h2>
+
+        <div class="hero-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">◆</span>
+          <span class="ornament-line"></span>
+        </div>
+
+        <p class="label-track">T H E &thinsp; I N A U G U R A L &thinsp; I S S U E</p>
+        <p class="label-track label-launching">L A U N C H I N G &thinsp; S O O N</p>
+
+        <p class="publication-note">An exclusive Kempegowda Studio Publication.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <span class="copyright">© 2026 Kempegowda Studio</span>
+      <img src="images/monogram.png" alt="KS Monogram" class="monogram" />
+    </footer>
+
+  </div><!-- /main-page -->
+
+  <script src="script.js"></script>
+</body>
+</html>
