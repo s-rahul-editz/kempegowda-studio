@@ -1,0 +1,165 @@
+/* --- Root & Resets --- */
+:root {
+    --white: #ffffff;
+    --charcoal: #1a1a1a;
+    --overlay: rgba(255, 255, 255, 0.97);
+    --border: #d1d1d1;
+    --transition-slow: 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--charcoal);
+    margin: 5vw 15vw; /* Physical gallery matting */
+    min-height: calc(100vh - 10vw);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography System --- */
+.en-serif { font-family: 'Playfair Display', serif; font-weight: 400; }
+.kn-serif { font-family: 'Noto Serif Kannada', serif; font-weight: 600; }
+.inter-body { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.5px; }
+.inter-caps { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 3px; font-weight: 400; }
+.italic-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.9rem; margin-top: 1.5rem; }
+
+/* --- Section 1: Main Webpage --- */
+.main-header {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.wordmark-container {
+    display: inline-block;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+    max-width: 250px;
+    height: auto;
+}
+
+.hero-section {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.masthead-kn { font-size: 4rem; line-height: 1.2; margin-bottom: 0.5rem; }
+.masthead-en { font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 2rem; }
+
+.launch-details p {
+    margin: 0.5rem 0;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 5vw;
+    left: 15vw;
+    right: 15vw;
+}
+
+.monogram {
+    width: 50px;
+    height: auto;
+}
+
+/* --- Section 2: Modal (Takeover) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--overlay);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.portrait-frame {
+    width: 280px;
+    height: 380px;
+    margin: 0 auto 2.5rem;
+    border: 1px solid var(--border);
+    padding: 10px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.tribute-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.modal-copy h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.modal-copy h3 { font-size: 1.2rem; margin-bottom: 2rem; }
+
+.btn-primary {
+    background: transparent;
+    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    padding: 12px 30px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--charcoal);
+    color: var(--white);
+}
+
+/* --- Interactivity Animations --- */
+.content-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.content-reveal {
+    animation: revealUp var(--transition-slow) forwards;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.8s ease;
+      }
